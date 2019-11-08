@@ -1,0 +1,130 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Plasmati Graduate CV
+% LaTeX Template
+% Version 1.0 (24/3/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Alessandro Plasmati (alessandro.plasmati@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template needs to be compiled with XeLaTeX.
+% The main document font is called Fontin and can be downloaded for free
+% from here: http://www.exljbris.com/fontin.html
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[letter,12pt]{article} % Default font size and paper size
+
+
+
+\usepackage{xunicode,xltxtra,url,parskip} % Formatting packages
+
+\usepackage[usenames,dvipsnames]{xcolor} % Required for specifying custom colors
+
+\usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry} % Page margins
+
+
+\usepackage{hyperref} % Required for adding links	and customizing them
+\definecolor{linkcolour}{rgb}{0,0.2,0.6} % Link color
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour} % Set link colors throughout the document
+
+\usepackage{titlesec} % Used to customize the \section command
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule] % Text formatting of sections
+\titlespacing{\section}{0pt}{3pt}{3pt} % Spacing around sections
+\setlength{\parindent}{0pt}
+
+\usepackage{tabularx}
+\usepackage{enumerate}
+
+\begin{document}
+
+%\setmainfont[Path = /usr/local/texlive/2013/texmf-dist/fonts/opentype/public/ebgaramond/, ItalicFont = EBGaramond12-Italic.otf ]{EBGaramond12-Regular.otf}
+%\setmainfont[Path = /Users/mbedell/Documents/Career/CV/FontinSans_49/, ItalicFont = Fontin_Sans_I_45b.otf, SmallCapsFont = Fontin_Sans_SC_45b.otf, BoldFont = Fontin_Sans_B_45b.otf]{Fontin_Sans_R_45b.otf} 
+
+\pagestyle{empty} % Removes page numbering
+
+\font\fb=''[cmr10]'' % Change the font of the \LaTeX command under the skills section
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\par{\centering{\Large \textbf{Megan Bedell}}\bigskip\par} % Your name
+
+%\par{\centering{\Large Flatiron Research Fellow}\bigskip\par} % Position
+
+
+%\vspace{-5 mm}
+
+\begin{tabular}{ll}
+\textsc{Address:} & Center for Computational Astrophysics, Flatiron Institute \\
+  & 162 5th Avenue, New York, NY 10010 \\
+\textsc{Email:} & \href{mailto:mbedell@flatironinstitute.org}{mbedell@flatironinstitute.org}\\
+\end{tabular}
+
+\section{Appointments}
+Associate Research Scientist, Flatiron Institute \hfill current
+
+\section{Professional Preparation}
+\textsc{Flatiron Institute} \hfill 2017 - 2019
+\newline Flatiron Research Fellowship (independent postdoctoral position)
+
+\textsc{University of Chicago}  \hfill 2012 - 2017
+\newline PhD in Astronomy \& Astrophysics
+
+\textsc{Haverford College}  \hfill 2008 - 2012
+\newline B.S. in Physics and Astronomy 
+
+\section{Synergistic Activities}
+
+\begin{itemize}
+\item Developer and maintainer of open-source code for radial velocity extraction, \href{https://www.github.com/megbedell/wobble}{wobble}
+
+\item Primary research supervisor for Flatiron Institute visiting pre-doctoral fellow Lily Zhao (Yale, PhD expected 2021) on topics related to EPRV and EXPRES instrument data analysis
+
+\item Participant in joint NASA-NSF Extreme Precision Radial Velocity Working Group
+
+\item Organizer for ``hack week''-style community-driven workshops to address data challenges in exoplanets and stellar spectroscopy, including Telluric Line Hack Week (NYC, 2019); Maximizing Early Science with TESS (Chicago, 2019); Preparing for TESS (NYC, 2018).
+
+\item Led observing \& radial velocity data analysis for Large ESO Programme on HARPS, \textit{``Planets around solar twins: tracing planet formation using highly accurate abundance determinations''} (P.I. Mel\'{e}ndez, 2012-2017, 100 nights)
+
+\end{itemize}
+
+
+
+\section{Products \& Publications}
+
+\begin{enumerate}
+\item \textbf{Bedell, M.}, Hogg, D.W., Foreman-Mackey, D., et al.\ 2019, \textit{wobble: a data-driven method for precision radial velocities}, AJ 158, 164. 
+(accompanying zenodo code release at \href{https://doi.org/10.5281/zenodo.3438281}{DOI:10.5281/zenodo.3438281})
+
+\item Ford, E., \textbf{Bedell, M.}, Ciardi, D., et al.\ 2019, \textit{Advanced Statistical Modeling of Ground-Based RV Surveys as Critical Support for Future NASA Earth-Finding Missions}, Astro2020: Decadal Survey on Astronomy and Astrophysics, science white papers, no. 466.
+
+\item Feinstein, A.D., Montet, B.T., Foreman-Mackey, D., \textbf{Bedell, M.}, et al.\ 2019, \textit{eleanor: An Open-source Tool for Extracting Light Curves from the TESS Full-frame Images}, PASP 131, 094502. 
+(accompanying zenodo code release at \href{https://doi.org/10.5281/zenodo.2597619}{DOI:10.5281/zenodo.2597619})
+
+\item Lorenzo-Oliveira, D., Freitas, F.C., Mel{\'e}ndez, J., \textbf{Bedell, M.}, et al., \textit{The Solar Twin Planet Search: The age - chromospheric activity relation}, 2018, A\&A 619, A73.
+
+\item \textbf{Bedell, M.}, Bean, J.L., Mel{\'e}ndez, J., et al.\ 2018, \textit{The Chemical Homogeneity of Sun-like Stars in the Solar Neighborhood}, ApJ, 865, 68.
+
+\item \textbf{Bedell, M.}, Bean, J.L., Mel\'{e}ndez, J., et al. 2017, \textit{Kepler-11 is a Solar Twin: Revising the Masses and Radii of Benchmark Planets via Precise Stellar Characterization}, ApJ 839, 94.
+
+\item Mel{\'e}ndez, J., \textbf{Bedell, M.,}, Bean, J.L., et al. 2017, \textit{The Solar Twin Planet Search V. Close-in, low-mass planet candidates and evidence of planet accretion in the solar twin HIP 68468}, A\&A 597, A34.
+
+\item \textbf{Bedell, M.,} Mel\'{e}ndez, J., Bean, J.L., et al. 2015, \textit{The Solar Twin Planet Search II. A Jupiter twin around a solar twin}, A\&A 581, A34.
+
+\item \textbf{Bedell, M.}, Mel{\'e}ndez, J., Bean, J.L., et al.\ 2014, \textit{Stellar Chemical Abundances: In Pursuit of the Highest Achievable Precision}, ApJ, 795, 23
+
+\end{enumerate}
+
+\end{document}
