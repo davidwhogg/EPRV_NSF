@@ -4,6 +4,7 @@
 %----- set up some colors
 \definecolor{darkgrey}{rgb}{0.3,0.3,0.3}
 \definecolor{lightgrey}{rgb}{0.95,0.95,0.95}
+\newcommand{\deemph}[1]{\textcolor{darkgrey}{\footnotesize{#1}}}
 
 %----- exact 1-in margins
 % NB: headheight and headsep MUST exist and be set
@@ -15,38 +16,40 @@
 \setlength{\oddsidemargin}{0.0in}
 \setlength{\evensidemargin}{0.0in}
 
-%----- make it easier on the tired eyes.
-% (This is a knob to tune as the proposal gets close to completion.)
-\linespread{1.03}
-
 %----- typeset certain kinds of words
 \newcommand{\acronym}[1]{{\small{#1}}}
-\newcommand{\RV}{\acronym{RV}}
-\newcommand{\EPRV}{\acronym{EPRV}}
-\newcommand{\CCF}{\acronym{CCF}}
 \newcommand{\NYU}{\acronym{NYU}}
-\newcommand{\GRA}{\acronym{GRA}}
 \newcommand{\AAS}{\acronym{AAS}}
 \newcommand{\NASA}{\acronym{NASA}}
 \newcommand{\XRP}{\acronym{XRP}}
 \newcommand{\NSF}{\acronym{NSF}}
+\newcommand{\DOE}{\acronym{DOE}}
+\newcommand{\EPRV}{\acronym{EPRV}}
+\newcommand{\RV}{\acronym{RV}}
+\newcommand{\CCF}{\acronym{CCF}}
 \newcommand{\PI}{\acronym{PI}}
+\newcommand{\GRA}{\acronym{GRA}}
+\newcommand{\LCDM}{\acronym{LCDM}}
+\newcommand{\LSS}{\acronym{LSS}}
+\newcommand{\CMB}{\acronym{CMB}}
 \newcommand{\ESA}{\acronym{ESA}}
 \newcommand{\ESO}{\acronym{ESO}}
-\newcommand{\WIYN}{\acronym{WIYN}}
+\newcommand{\Gaia}{\observatory{Gaia}}
 \newcommand{\observatory}[1]{\textsl{#1}}
 \newcommand{\package}[1]{\textsf{#1}}
 \newcommand{\project}[1]{\textsl{#1}}
 \newcommand{\GALEX}{\observatory{\acronym{GALEX}}}
+\newcommand{\LSST}{\observatory{\acronym{LSST}}}
+\newcommand{\DESI}{\observatory{\acronym{DESI}}}
+\newcommand{\SDSSIV}{\observatory{\acronym{SDSS-IV}}}
 \newcommand{\Kepler}{\observatory{Kepler}}
-\newcommand{\Ktwo}{\observatory{\acronym{K2}}}
-\newcommand{\Gaia}{\observatory{Gaia}}
 \newcommand{\TESS}{\observatory{\acronym{TESS}}}
+\newcommand{\Ktwo}{\observatory{\acronym{K2}}}
 \newcommand{\HARPS}{\project{\acronym{HARPS}}}
-\newcommand{\EXPRES}{\project{\acronym{EXPRES}}}
-\newcommand{\ESPRESSO}{\project{\acronym{ESPRESSO}}}
 \newcommand{\NEID}{\project{\acronym{NEID}}}
 \newcommand{\NNEXPLORE}{\project{\acronym{NN-EXPLORE}}}
+\newcommand{\EXPRES}{\project{\acronym{EXPRES}}}
+\newcommand{\ESPRESSO}{\project{\acronym{ESPRESSO}}}
 \newcommand{\wobble}{\project{wobble}}
 \newcommand{\foreign}[1]{\textsl{#1}}
 \newcommand{\eg}{\foreign{e.g.}}
@@ -63,6 +66,7 @@
 \newcommand{\cmps}{{\mathrm{cm\,s^{-1}}}}
 \newcommand{\mps}{{\mathrm{m\,s^{-1}}}}
 \newcommand{\kmps}{{\mathrm{km\,s^{-1}}}}
+\newcommand{\Mpc}{{\mathrm{Mpc}}}
 
 %----- typeset journals
 \newcommand{\aj}{Astron.\,J.}
@@ -73,42 +77,54 @@
 \newcommand{\pasp}{Pubs.\,Astron.\,Soc.\,Pac.}
 \newcommand{\aap}{Astron.\,\&~Astrophys.}
 
-%----- fix bibtex shit
-\newcommand{\dodoi}[1]{}
-\newcommand{\doarXiv}[1]{}
-
-%----- Ensmallen headers
+%----- Tighten up section headings
 \makeatletter
-\newcommand\nasasection{\@startsection {section}{1}{\z@}%
-                                   {-2.0ex \@plus -1.0ex \@minus -.2ex}% Change this line to modify space above heading
-                                   {1.0ex \@plus.2ex}% Change this line to modify space below heading
-                                   {\normalfont\bfseries}}
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-3.00ex \@plus -1ex \@minus -.2ex}%
+                                   {1.5ex \@plus.2ex}%
+                                   {\normalfont\large\bfseries}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+                                     {-2.75ex\@plus -1ex \@minus -.2ex}%
+                                     {1.5ex \@plus .2ex}%
+                                     {\normalfont\normalsize\bfseries}}
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+                                    {2.75ex \@plus1ex \@minus.2ex}%
+                                    {-1em}%
+                                    {\normalfont\normalsize\bfseries}}
 \makeatother
 
 %----- Tighten up paragraphs and lists
-\setlength{\bibsep}{0.5ex}
 \setlength{\parskip}{0.0ex}
-\newlength{\hoggindent}
-\setlength{\hoggindent}{0.2in}
-\setlength{\parindent}{\hoggindent}
+\setlength{\parindent}{0.2in}
+\setlength{\bibsep}{0pt}
 \renewenvironment{itemize}{\begin{list}{$\bullet$}{%
-  \setlength{\topsep}{0.5ex}%
+  \setlength{\topsep}{0.0ex}%
   \setlength{\parsep}{0.0ex}%
   \setlength{\partopsep}{0.0ex}%
-  \setlength{\itemsep}{0.5ex}%
-  \setlength{\leftmargin}{\hoggindent}%
-  \setlength{\listparindent}{\hoggindent}%
-}}{\end{list}}
+  \setlength{\itemsep}{0.0ex}%
+  \setlength{\leftmargin}{2.0\parindent}}}{\end{list}}
 \newcounter{actr}
 \renewenvironment{enumerate}{\begin{list}{{\textbf{\textsf{\arabic{actr}.}}}}{%
   \usecounter{actr}%
-  \setlength{\topsep}{0.5ex}%
+  \setlength{\topsep}{0.0ex}%
   \setlength{\parsep}{0.0ex}%
   \setlength{\partopsep}{0.0ex}%
-  \setlength{\itemsep}{0.5ex}%
-  \setlength{\leftmargin}{\hoggindent}%
-  \setlength{\listparindent}{\hoggindent}%
-}}{\end{list}}
+  \setlength{\itemsep}{0.0ex}%
+  \setlength{\leftmargin}{2.0\parindent}}}{\end{list}}
+
+%----- Special Hogg list for references
+\newcommand{\hogglist}{%
+  \rightmargin=0in
+  \leftmargin=1em
+  \topsep=0ex
+  \partopsep=0pt
+  \itemsep=0ex
+  \parsep=0pt
+  \itemindent=-1.0\leftmargin
+  \listparindent=\leftmargin
+  \settowidth{\labelsep}{~}
+  \usecounter{enumi}
+}
 
 %----- mess with paragraph spacing!
 \makeatletter
@@ -117,20 +133,6 @@
                                     {-1em}%
                                     {\normalfont\normalsize\bfseries}}
 \makeatother
-
-%----- Special Hogg list for references
-  \newcommand{\hogglist}{%
-    \rightmargin=0in
-    \leftmargin=\hoggindent
-    \topsep=0ex
-    \partopsep=0pt
-    \itemsep=0ex
-    \parsep=0pt
-    \itemindent=-1.0\leftmargin
-    \listparindent=\leftmargin
-    \settowidth{\labelsep}{~}
-    \usecounter{enumi}
-  }
 
 %----- side-to-side figure macro
 %------- make numbers add up to 94%
@@ -167,7 +169,7 @@
   \setlength{\fboxsep}{0pt}%
   \,\fbox{\sffamily%
   {\setlength{\fboxsep}{0.01\textwidth}\colorbox{lightgrey}{%
-  \parbox{0.97\textwidth}{\setlength{\parindent}{\hoggindent}%
+  \parbox{0.97\textwidth}{\setlength{\parindent}{0.2in}%
   #1
   }}}}\end{figure}}
 

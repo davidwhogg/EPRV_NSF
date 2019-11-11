@@ -13,7 +13,7 @@ description.bbl: description.bib description.tex
 
 description.pdf: description.bbl
 
-%.pdf: %.tex hogg_nasa.tex
+%.pdf: %.tex hogg_nsf.tex
 	${LATEX} $<
 	( ${CHECK_RERUN} && ${LATEX} $< ) || echo "Done."
 	( ${CHECK_RERUN} && ${LATEX} $< ) || echo "Done."
