@@ -40,7 +40,7 @@ precisely astronomers might measure the radial velocity variations
 of the center of mass of a distant star with a spectrograph}.
 Of course in real life, there are real limits, set
 by (for example) photon noise, stellar surface convection and activity,
-variations in the atmosphere, and spectrograph calibration stability.
+variations in the Earth's atmosphere, and spectrograph calibration stability.
 In practice, almost no stars\footnote{%
   At least not in the literature! We have heard rumors and 
   seen flashes of figures suggesting that the \acronym{ESO} spectrograph
@@ -103,14 +103,16 @@ the ``unknown unknown'' effects of stellar variability.
 %The proposers have strong cred in this area.
 
 \paragraph{Why this team?}
+The proposing team has a demonstrated record of expertise in making
+measurements of stars at the limits of observational precision. 
 PI Hogg has built novel data-driven models of the color--magnitude diagram of
 stars, improving ESA \Gaia\ parallax measurements (\citealt{Leistedt, Widmark, Anderson}).
 These models re-purpose machine-learning tools to build models that
 have causal structure useful to astronomers (they know about
 luminosity distances and parallaxes, for example).
-The Co-I Bedell has developed new techniques to make exceedingly
-precise measurements of stellar element abundances without explicit
-use of stellar models, by designing perfectly differential stellar
+Co-I Bedell has developed new techniques to make exceedingly
+precise measurements of stellar element abundances with minimal
+reliance on stellar models, by designing perfectly differential stellar
 comparisons \citep{Bedell2014, Bedell2018}.
 PI Hogg has the current best-in-class methods for determining stellar
 parameters and abundances from survey-quality spectroscopy (\citealt{Cannon2, Doppel}).
@@ -160,14 +162,18 @@ includes two themes of relevance, which are \textbf{Growing
 \paragraph{This proposal, in a nutshell:}
 Stellar variability is the tall pole in \EPRV\ at the present day.
 We propose to build customized, data-driven models to capture and mitigate these
-stellar astrophysical noise sources.
-Our goal is to make \EPRV\ measurements an order of magnitude more precise
+stellar astrophysical noise sources, taking advantage of modern advances in
+data science and applied math.
+Our driving motivation is to make \EPRV\ measurements an order of magnitude more precise
 and thereby transform the science
-that can be done with the current and next generation of spectrographs.
+that can be done with the current and next generation of spectrographs. 
+Along the way, our contributions to the literature will 
+establish a common statistical framework to enable communication 
+and methodological comparisons across the global \EPRV\ community. 
 
 \section{First Stage: Information about \EPRV\ in time-varying stars (information)}
 
-Perhaps the strangest thing about what we are proposing is that
+Perhaps the strangest thing about our science goal is that
 it is \emph{conceptually impossible}!
 
 Okay, not really, but it is worth remembering that the entire
@@ -247,7 +253,7 @@ If the amplitude is tiny, it won't strongly affect \RV\ measurements.
 \emph{What is the dimensionality of the spectral variability?}
 If the spectrum varies in a low-dimensional space spanned by a small set
 of eigen-spectra, \EPRV\ measurements can be made in the tangent space
-orthogonal to the specral variability.
+orthogonal to the spectral variability.
 \item
 \emph{What is the time coherence of the variability?}
 If the variability is uncorrelated from observation to observation, it
@@ -709,8 +715,9 @@ These data will also be used in the Third Stage.
 \textbf{The deliverables of the Third Stage (stochastics) will be papers in the
 refereed literature about these stochastic sources of stellar spectral
 variability.}
-They will also be numerical methods, open-source software, documentation,
-and tutorials.
+These publications will also include numerical methods, open-source software, 
+documentation, and tutorials, as with previous works published by the 
+proposing team \citep[e.g.][]{Bedell2019}.
 Dissemination will be through papers, conference participation, and
 \textbf{community workshops} we run in Years 2 and 3 (more detail below).
 
@@ -737,7 +744,10 @@ The scientific analysis will take place in Years~1 and 2, with
 writing and dissemination in Years~2 and 3.
 This stage will also produce two papers, one focusing on passive
 approaches (nulling), and one focusing on active approaches (resolving
-and fitting).
+and fitting). 
+(HOGG: The preceding plan is no longer strictly true, 
+but how to updatewithout seeming like we're asking for money for 
+something already done?)
 The dissemination part will also include two community workshops on
 \EPRV\ as a time-domain problem, in which we build on our experience
 of working with radial-velocity teams to bring new methods and
@@ -765,7 +775,7 @@ Again, we will use the community workshops in Years~2 and 3 as part of
 the dissemination
 
 PI Hogg will be responsible for overall project management. This is a
-tiny project; most of the management will involve decisions about our
+small-scale project; most of the management will involve decisions about our
 priorities given the experiments we perform in Year~1 and the
 challenges we discover there.
 PI Hogg will also be responsible for academic supervision of, and
