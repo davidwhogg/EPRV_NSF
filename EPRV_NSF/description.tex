@@ -22,8 +22,7 @@
   \cfoot{}
 \begin{document}\sloppy\sloppypar\raggedbottom\frenchspacing
 
-\section*{Introduction}
-
+\noindent
 In many important regimes, the detection and characterization of exoplanets
 requires extreme precision radial-velocity (\EPRV)
 measurements.
@@ -31,15 +30,14 @@ With \EPRV\ programs we can detect planets in the medium-to-long
 orbital-period regime that is under-represented in transit searches.
 We can measure the 
 masses (and hence compositions) of transiting planets,
-serving directly \TESS\ Mission goals (for example).
-And we can characterize host stars and systems in exquisite detail.
+and we can characterize host stars and systems in exquisite detail.
 With the next generation of \EPRV\ 
-instruments, including the \NEID\ Spectrograph in the \NNEXPLORE\ Program,
+instruments
 we hope to detect terrestrial planets on Earth-like orbits.
 
-From a fundamental-physics perspective, there is essentially no limit to how
+From a fundamental-physics perspective, \emph{there is essentially no limit to how
 precisely astronomers might measure the radial velocity variations
-of the center of mass of a distant star with an \EPRV\ spectrograph.
+of the center of mass of a distant star with a spectrograph}.
 Of course in real life, there are real limits, set
 by (for example) photon noise, stellar surface convection and activity,
 variations in the atmosphere, and spectrograph calibration stability.
@@ -146,83 +144,9 @@ this track record is very relevant to the current proposal.
 And for the long-term value and sustainability of the open-source methods
 and software we develop.
 
-\paragraph{Relevance to \NASA\ \XRP\ objectives:} The 2018 \acronym{NSPIRES}
-Amendment 68 appendix E.5 (Second Exoplanets Research) description of this
-\XRP\ call lists four general categories for proposals (page
-E.5-1).
-This proposal falls into two of these categories.
-It is designed to improve the capabilities of all spectroscopic
-facilities performing radial-velocity measurments relevant to
-exoplanet observations.
-Thus, it is designed to ``Detect exoplanets and/or confirm exoplanet
-candidates'', and it is designed to ``Observationally characterize
-exoplanets''.
-That is, the proposed activities are precisely aligned with
-\XRP\ goals.
+\paragraph{Relevance to \NSF programs and objectives:}
 
-This proposal is about making ground-based spectroscopic programs more
-precise, more capable, and more productive for exoplanet research
-goals.
-The \XRP\ call for proposals explicitly includes support for
-ground-based observing programs, including those at public, private,
-and \NASA-supported facilities.
-
-This project is directly aimed at improving the capabilities of the
-\NEID\ Spectrograph, which sees first light this year,
-as part of the \NASA--\NSF\ \NNEXPLORE\ program.
-By serving the \EPRV\ community generally, this project will
-directly and indirectly help the \NASA\ \TESS\ Mission,
-which requires good \RV\ follow-up for many of its mission goals.
-Thus this proposal is written to develop capabilities that will
-directly support and improve the legacy value of existing
-\NASA\ missions.
-It will also make possible new observing programs and strategies for
-community proposers to the \NNEXPLORE\ facilities.
-
-Finally, in the context of the US Decadal Survey and proposals for near-future
-\NASA\ missions, the question arises: Should we be doing \EPRV\ from space?
-The answer to this question depends critically on the detailed error budget on
-\EPRV\ measurements.
-If \EPRV\ measurements have uncertainties dominated by instrument
-stability, atmosphere, and tellurics, then space is the place to be \citep[e.g.][]{Plavchan2018}.
-\textbf{If we cannot calibrate out or mitigate stellar variability
-  in \EPRV\ measurements, then taking
-  \EPRV\ to space should not be a priority.}
-Instead, community resources would be much better spent on supporting 
-carefully planned ground-based missions which can obtain far more data 
-for much cheaper. 
-Thus the mitigation of astrophysical noise sources in \EPRV\ is of critical
-importance to \NASA's near-term and middle-term planning and strategy
-for its exoplanet missions and programs.
-Page E.5-2 of the \acronym{NSPIRES} Amendment 68 says ``Proposals
-should demonstrate relevance to NASA by describing the benefit for
-NASA missions, with specific past, current, or future missions or
-programs identified.''  Consider that demonstrated, here and below.
-
-\paragraph{Relevance to \NASA\ Strategic Plans:}
-\begin{itemize}
-\item
-\textit{\NASA\ Strategic Plan 2018}:
-The entire Exoplanet Exploration program (of which \XRP\ is a part) falls under
-Strategic Objective 1.1 (Understand the Sun, Earth, Solar System, and Universe)
-of Strategic Goal 1 (Expand Human Knowledge Through Scientific Discoveries) of the
-\NASA\ Strategic Plan.
-Because this project is directly addressing the operation of the
-ground-based \NNEXPLORE\ spectrograph operated through novel
-partnerships, it also connects (perhaps weakly) to Strategic Objective
-4.1 (Engage in Partnership Strategies).
-\item
-\textit{\NASA\ Strategic Space Technology Investment Plan}:
-This project has some limited relevance to \NASA's plans for technology development.
-Results related to the advisability of performing \EPRV\ work in space are related to
-the prioritization of improving technology readiness for spectrograph components.
-\item
-\textit{Voyages: Charting the Course for Sustainable Human Space
-  Exploration}: Since the strategic plan for \NASA\ human exploration
-does not yet include plans for planets outside the Solar System
-(nothing past Mars?), we admit that our relevance to this part of the
-\NASA\ Strategy is weak! But if it did extend outside the Solar System\ldots
-\end{itemize}
+HOGG, BEDELL: TBD
 
 \paragraph{This proposal, in a nutshell:}
 Stellar variability is the tall pole in \EPRV\ at the present day.
@@ -553,8 +477,13 @@ There is hope in the \EPRV\ community that cleverly chosen integration
 times can obviate p-mode noise \citep[see, \eg][]{Chaplin2019}.
 Current work in this area makes somewhat na\"ive assumptions about the
 stability of the p-mode amplitudes.
-We will revisit this with real data; the \HARPS\ Archive includes
-asteroseismic campaigns that can be empirically coadded into different
+We will revisit this with real data:
+The \EXPRES\ Project has given us data from an asteroseismic campaign
+on BEDELL WHAT STAR?
+The \HARPS\ Archive includes
+asteroseismic campaigns.
+These short p-mode-relevant exposures n
+can be empirically coadded into different
 exposure times and analyzed for residual p-mode noise.
 We expect to find that although some exposure times are better than
 others, we need to actively mitigate, not passively avoid, p-mode
@@ -612,7 +541,8 @@ strategy.
 \end{itemize}
 
 \noindent
-Because we have access to public \HARPS\ asteroseismic campaigns for 
+Because we have access to proprietary \EXPRES\ data (from Debra Fischer at Yale; see letter of support)
+ public \HARPS\ asteroseismic campaigns for 
 several seismic stars including $\beta$ Hyi, $\alpha$ Cen B, and 18 Sco,
 we can perform these experiments on existing, real data.
 We don't have to make assumptions about how p-modes work.
@@ -752,6 +682,7 @@ components of \wobble.
 That's just an example, but shows the kinds of approaches we imagine taking.
 
 Again, for this Third Stage (stochastics), we will do experiments on
+\EXPRES\ data we have in hand, and
 public \HARPS\ data from the Archive.
 That is, all the data necessary for this Stage is in hand.
 In addition, we expect more relevant data to appear in public archives
@@ -927,6 +858,8 @@ We might look like outsiders (and especially the PI).
 But we are not: We have one of the very few open-source \EPRV\ codes
 (\wobble; \citealt{Bedell2019}), and there are many new projects incorporating 
 \wobble\ into their pipelines.
+We are working on calibration and data analysis with the \EXPRES\ team (Debra Fischer
+at Yale is the PI; see the letter of support).
 Also, we are partners in the forthcoming \HARPS-3 project
 \project{Terra Hunting Experiment}, which has a direct engineering
 requirement to obtain better than $20\,\cmps$ precision
@@ -936,7 +869,7 @@ the mitigation strategies we discover and build.
 We have also operated many very successful workshops and hack weeks
 bringing new methods and new data to the astrophysics community.
 These include the \project{Gaia Sprints}, \project{Preparing for
-  TESS}, and the \NASA-funded \project{Telluric-line Hack Week}.
+  \TESS}, and the \project{Telluric-line Hack Week}.
 These events have brought together diverse communities and spread
 the gospel of good methods.
 But above all, the whole \EPRV\ community is very thirsty for new
@@ -980,17 +913,8 @@ Therefore there are handles for modeling and mitigation.
 We are optimistic that these approaches will work.
 If they don't, at least we will know that we have tried very very hard.
 
-\paragraph{How does this connect to \XRP\ program priorities?}
-There are three answers to this. The first is that this project
-improves the ability of \EPRV\ projects to detect and characterize
-exoplanets, which are two of the main goals of the \XRP\ program.
-The second is that the results of this project will directly support
-and enhance the science being done in the \NASA--\NSF\ \NNEXPLORE\ Program,
-which is deploying the \NEID\ Spectrograph this year,
-and also support the \TESS\ Mission and community.
-The third is that this work is essential to \NASA's medium-term planning
-for new missions: If we can't mitigate stellar variability, there is no
-point in taking \EPRV\ to space!
+\paragraph{How does this connect to the CDS\&E program priorities?}
+HOGG, BEDELL: TBD
 
 \clearpage
 \bibliographystyle{apalike}
