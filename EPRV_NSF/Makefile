@@ -5,7 +5,7 @@ RM          = rm -rf
 TMP_SUFFS   = aux blg log dvi eps out
 CHECK_RERUN = grep Rerun $*.log
 
-all: facilities.pdf summary.pdf description.pdf biosketch_hogg.pdf
+all: data.pdf facilities.pdf summary.pdf description.pdf biosketch_hogg.pdf
 
 description.bbl: description.bib description.tex
 	${LATEX} description
