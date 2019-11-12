@@ -146,6 +146,13 @@ this track record is very relevant to the current proposal.
 And for the long-term value and sustainability of the open-source methods
 and software we develop.
 
+Finally, this team has close ties to multiple \EPRV\ instrument and survey
+teams, including the \project{Terra Hunting Experiment} and the \project{EXPRES}
+spectrograph. Together with Co-I Bedell's extensive experience with utilizing 
+publically-available \project{HARPS} data, these connections ensure that 
+we can obtain the data sets we need, and that the findings we produce will 
+be noticed by the \EPRV\ community.
+
 \paragraph{Relevance to \NSF\ programs and objectives:}
 
 HOGG, BEDELL: TBD
@@ -243,7 +250,7 @@ This is the \emph{theory part} of this proposal.
 
 The question is: How precisely can a stellar RV be measured in the context
 of stellar spectral variability?
-Of course the answer depends on precisely how the star is varying;
+Of course the answer depends on exactly how the star is varying;
 in detail it depends on questions about the variability like the following:
 \begin{itemize}
 \item
@@ -483,23 +490,35 @@ hotter when it contracts and cooler when it expands, adiabatically. Although for
 G-type stars these temperature variations are tiny, they ought to be visible in
 high-signal-to-noise \EPRV\ spectral observations.
 
-Working with these good properties, we propose to explore four
-mitigation strategies for p-modes:
+These nice properties of p-modes, and the relatively straightforward physical 
+interpretation of these oscillations, make them an ideal laboratory for testing
+various stellar noise mitigation strategies. \textbf{The goal of the Second Stage is 
+two-fold: we want to produce recommendations for optimal treatment of p-modes
+in \EPRV\ measurements, but we also want to use p-modes as an 
+example of how to work through correlated stellar noise from within the 
+frameworks we established in the First Stage publications.}
+
+(BEDELL FIGURE:
+caption: realistic p-mode oscillations arising 
+from a series of damped driven simple harmonic oscillators at 
+a forest of frequencies. )
+
+We plan to explore four mitigation strategies for p-modes. We will stage 
+illustrative experiments using a toy model of a Sun-like oscillator. 
+We will also follow up using real data, mainly from short-exposure 
+\EXPRES\ observations of $\tau$ Ceti. Both of these data sets are already
+in-hand. The mitigation strategies we will explore are:
 \begin{itemize}
 \item
 \textbf{Choosing resonant integration times:}
 There is hope in the \EPRV\ community that cleverly chosen integration
 times can obviate p-mode noise \citep[see, \eg][]{Chaplin2019}.
 Current work in this area makes somewhat na\"ive assumptions about the
-stability of the p-mode amplitudes.
-We will revisit this with real data:
-The \EXPRES\ Project has given us data from an asteroseismic campaign
-on BEDELL WHAT STAR?
-The \HARPS\ Archive includes
-asteroseismic campaigns.
-These short p-mode-relevant exposures n
-can be empirically coadded into different
-exposure times and analyzed for residual p-mode noise.
+stability of the p-mode amplitudes. 
+Using our realistic toy model of stochastic p-mode oscillations, we will
+test different integration times. 
+We will also experiment with binning the \EXPRES\ data to simulate 
+different integrations. 
 We expect to find that although some exposure times are better than
 others, we need to actively mitigate, not passively avoid, p-mode
 noise.
@@ -556,9 +575,10 @@ strategy.
 \end{itemize}
 
 \noindent
-Because we have access to proprietary \EXPRES\ data (from Debra Fischer at Yale; see letter of support)
- public \HARPS\ asteroseismic campaigns for 
-several seismic stars including $\beta$ Hyi, $\alpha$ Cen B, and 18 Sco,
+Because we have access to proprietary \EXPRES\ data on $\tau$ Ceti 
+(from Debra Fischer at Yale; see letter of support),
+% public \HARPS\ asteroseismic campaigns for 
+%several seismic stars including $\beta$ Hyi, $\alpha$ Cen B, and 18 Sco,
 we can perform these experiments on existing, real data.
 We don't have to make assumptions about how p-modes work.
 And over the course of this project, more public data sets may appear
@@ -576,6 +596,11 @@ also be methods and associated open-source code for each of the successful
 mitigation strategies.
 The expectation is that this Stage will produce at least one
 refereed paper about p-modes. 
+This paper will build upon the language introduced in the First Stage 
+papers and explicitly discuss the mitigation strategies tested in 
+terms of information theory. (HOGG: do you agree? are there edits we
+can make to previous parts of this section to call out First Stage 
+connections more explicitly?)
 
 Together, the First and Second Stages set the scene for tackling more
 pernicious sources of correlated noise in \EPRV.
