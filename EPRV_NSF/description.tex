@@ -40,7 +40,7 @@ precisely astronomers might measure the radial velocity variations
 of the center of mass of a distant star with a spectrograph}.
 Of course in real life, there are real limits, set
 by (for example) photon noise, stellar surface convection and activity,
-variations in the atmosphere, and spectrograph calibration stability.
+variations in the Earth's atmosphere, and spectrograph calibration stability.
 In practice, almost no stars\footnote{%
   At least not in the literature! We have heard rumors and 
   seen flashes of figures suggesting that the \acronym{ESO} spectrograph
@@ -103,14 +103,16 @@ the ``unknown unknown'' effects of stellar variability.
 %The proposers have strong cred in this area.
 
 \paragraph{Why this team?}
+The proposing team has a demonstrated record of expertise in making
+measurements of stars at the limits of observational precision. 
 PI Hogg has built novel data-driven models of the color--magnitude diagram of
 stars, improving ESA \Gaia\ parallax measurements (\citealt{Leistedt, Widmark, Anderson}).
 These models re-purpose machine-learning tools to build models that
 have causal structure useful to astronomers (they know about
 luminosity distances and parallaxes, for example).
-The Co-I Bedell has developed new techniques to make exceedingly
-precise measurements of stellar element abundances without explicit
-use of stellar models, by designing perfectly differential stellar
+Co-I Bedell has developed new techniques to make exceedingly
+precise measurements of stellar element abundances with minimal
+reliance on stellar models, by designing perfectly differential stellar
 comparisons \citep{Bedell2014, Bedell2018}.
 PI Hogg has the current best-in-class methods for determining stellar
 parameters and abundances from survey-quality spectroscopy (\citealt{Cannon2, Doppel}).
@@ -144,6 +146,13 @@ this track record is very relevant to the current proposal.
 And for the long-term value and sustainability of the open-source methods
 and software we develop.
 
+Finally, this team has close ties to multiple \EPRV\ instrument and survey
+teams, including the \project{Terra Hunting Experiment} and the \project{EXPRES}
+spectrograph. Together with Co-I Bedell's extensive experience with utilizing 
+publically-available \project{HARPS} data, these connections ensure that 
+we can obtain the data sets we need, and that the findings we produce will 
+be noticed by the \EPRV\ community.
+
 \paragraph{Relevance to \NSF\ programs and objectives:}
 
 HOGG, BEDELL: TBD
@@ -162,14 +171,18 @@ HOGG: Is \textbf{Understanding the Rules of Life} also relevant?
 \paragraph{This proposal, in a nutshell:}
 Stellar variability is the tall pole in \EPRV\ at the present day.
 We propose to build customized, data-driven models to capture and mitigate these
-stellar astrophysical noise sources.
-Our goal is to make \EPRV\ measurements an order of magnitude more precise
+stellar astrophysical noise sources, taking advantage of modern advances in
+data science and applied math.
+Our driving motivation is to make \EPRV\ measurements an order of magnitude more precise
 and thereby transform the science
-that can be done with the current and next generation of spectrographs.
+that can be done with the current and next generation of spectrographs. 
+Along the way, our contributions to the literature will 
+establish a common statistical framework to enable communication 
+and methodological comparisons across the global \EPRV\ community. 
 
 \section{First Stage: Information about \EPRV\ in time-varying stars (information)}
 
-Perhaps the strangest thing about what we are proposing is that
+Perhaps the strangest thing about our science goal is that
 it is \emph{conceptually impossible}!
 
 Okay, not really, but it is worth remembering that the entire
@@ -239,7 +252,7 @@ This is the \emph{theory part} of this proposal.
 
 The question is: How precisely can a stellar RV be measured in the context
 of stellar spectral variability?
-Of course the answer depends on precisely how the star is varying;
+Of course the answer depends on exactly how the star is varying;
 in detail it depends on questions about the variability like the following:
 \begin{itemize}
 \item
@@ -249,7 +262,7 @@ If the amplitude is tiny, it won't strongly affect \RV\ measurements.
 \emph{What is the dimensionality of the spectral variability?}
 If the spectrum varies in a low-dimensional space spanned by a small set
 of eigen-spectra, \EPRV\ measurements can be made in the tangent space
-orthogonal to the specral variability.
+orthogonal to the spectral variability.
 \item
 \emph{What is the time coherence of the variability?}
 If the variability is uncorrelated from observation to observation, it
@@ -479,23 +492,36 @@ hotter when it contracts and cooler when it expands, adiabatically. Although for
 G-type stars these temperature variations are tiny, they ought to be visible in
 high-signal-to-noise \EPRV\ spectral observations.
 
-Working with these good properties, we propose to explore four
-mitigation strategies for p-modes:
+These nice properties of p-modes, and the relatively straightforward physical 
+interpretation of these oscillations, make them an ideal laboratory for testing
+various stellar noise mitigation strategies. \textbf{The goal of the Second Stage is 
+two-fold: we want to produce recommendations for optimal treatment of p-modes
+in \EPRV\ measurements, but we also want to use p-modes as an 
+example of how to work through correlated stellar noise from within the 
+frameworks we established in the First Stage publications.}
+
+(BEDELL FIGURE:
+caption: Realistic p-mode oscillations for a Sun-like star arising 
+from a series of damped driven simple harmonic oscillators at 
+a forest of frequencies. We will use this simulation along with
+real data to explore various mitigation strategies.)
+
+We plan to explore four mitigation strategies for p-modes. We will stage 
+illustrative experiments using a toy model of a Sun-like oscillator. 
+We will also follow up using real data, mainly from short-exposure 
+\EXPRES\ observations of $\tau$ Ceti. Both of these data sets are already
+in-hand. The mitigation strategies we will explore are:
 \begin{itemize}
 \item
 \textbf{Choosing resonant integration times:}
 There is hope in the \EPRV\ community that cleverly chosen integration
 times can obviate p-mode noise \citep[see, \eg][]{Chaplin2019}.
 Current work in this area makes somewhat na\"ive assumptions about the
-stability of the p-mode amplitudes.
-We will revisit this with real data:
-The \EXPRES\ Project has given us data from an asteroseismic campaign
-on BEDELL WHAT STAR?
-The \HARPS\ Archive includes
-asteroseismic campaigns.
-These short p-mode-relevant exposures n
-can be empirically coadded into different
-exposure times and analyzed for residual p-mode noise.
+stability of the p-mode amplitudes. 
+Using our realistic toy model of stochastic p-mode oscillations, we will
+test different integration times. 
+We will also experiment with binning the \EXPRES\ data to simulate 
+different integrations. 
 We expect to find that although some exposure times are better than
 others, we need to actively mitigate, not passively avoid, p-mode
 noise.
@@ -552,9 +578,10 @@ strategy.
 \end{itemize}
 
 \noindent
-Because we have access to proprietary \EXPRES\ data (from Debra Fischer at Yale; see letter of support)
- public \HARPS\ asteroseismic campaigns for 
-several seismic stars including $\beta$ Hyi, $\alpha$ Cen B, and 18 Sco,
+Because we have access to proprietary \EXPRES\ data on $\tau$ Ceti 
+(from Debra Fischer at Yale; see letter of support),
+% public \HARPS\ asteroseismic campaigns for 
+%several seismic stars including $\beta$ Hyi, $\alpha$ Cen B, and 18 Sco,
 we can perform these experiments on existing, real data.
 We don't have to make assumptions about how p-modes work.
 And over the course of this project, more public data sets may appear
@@ -572,6 +599,11 @@ also be methods and associated open-source code for each of the successful
 mitigation strategies.
 The expectation is that this Stage will produce at least one
 refereed paper about p-modes. 
+This paper will build upon the language introduced in the First Stage 
+papers and explicitly discuss the mitigation strategies tested in 
+terms of information theory. (HOGG: do you agree? are there edits we
+can make to previous parts of this section to call out First Stage 
+connections more explicitly?)
 
 Together, the First and Second Stages set the scene for tackling more
 pernicious sources of correlated noise in \EPRV.
@@ -673,6 +705,16 @@ impact on \EPRV\ projects (amplitudes of signals, flowed down to final measureme
 Since we don't yet understand these variabilities in detail, part of this
 proposal is to do the work to make those priority decisions.
 
+We emphasize here that we are \textit{not} proposing to ``solve
+all stellar variability.'' What we are proposing to do is develop a set of 
+principled, largely data-driven methods and statistical ideas, which may be 
+broadly adapted to different \EPRV\ challenges. This Third Stage is the 
+point at which we use the knowledge gained in the First Stage (where we 
+laid out an information-theory-based framework) and in the Second Stage 
+(where we tackled a relatively well-understood and tractable example 
+of stellar spectral variability) and apply it to more general and perhaps
+less well-behaved sources of noise.
+
 As we said in the Introduction, the key idea is that the form of the
 data-driven models we build match the form of the variability that
 we expect.
@@ -695,24 +737,25 @@ That's just an example, but shows the kinds of approaches we imagine taking.
 Again, for this Third Stage (stochastics), we will do experiments on
 \EXPRES\ data we have in hand, and
 public \HARPS\ data from the Archive.
-That is, all the data necessary for this Stage is in hand.
+That is, all the data necessary for this Stage is already in place.
 In addition, we expect more relevant data to appear in public archives
 from the \ESPRESSO\ and \NEID\ instruments.
 We will adapt to new data as it becomes available.
-In addition, for some of these projects could benefit from Solar
+For some of these projects we could benefit from Solar
 spectra, since the Sun is a great example of the kind of star we are
-intested in.
-By construction, it is Sun-like!
-And it can be taken with very good signal-to-noise and time resoluion.
+intested in; by construction, it is Sun-like!
+And data can be taken with very good signal-to-noise and time resoluion.
 There are both \HARPS-N and \HARPS\ data on the Sun that will become
-available during the project duration.
-These data will also be used in the Third Stage.
+public during the project duration. 
+\EXPRES\ and \NEID\ will also likely obtain Sun-as-a-star data. 
+So many excellent sources of data exist for our use in the Third Stage.
 
 \textbf{The deliverables of the Third Stage (stochastics) will be papers in the
-refereed literature about these stochastic sources of stellar spectral
+refereed literature about stochastic sources of stellar spectral
 variability.}
-They will also be numerical methods, open-source software, documentation,
-and tutorials.
+These publications will also include numerical methods, open-source software, 
+documentation, and tutorials, as with previous works published by the 
+proposing team \citep[e.g.][]{Bedell2019}.
 Dissemination will be through papers, conference participation, and
 \textbf{community workshops} we run in Years 2 and 3 (more detail below).
 
@@ -735,11 +778,14 @@ and the second will focus on the causal-inference approaches.
 
 The Second Stage (p-modes) will be led by Co-I Bedell, with
 experiments performed by the \GRA, and writing by the full team.
+(HOGG: The preceding plan is no longer strictly true, 
+but how to update without seeming like we're asking for money for 
+something already done?)
 The scientific analysis will take place in Years~1 and 2, with
 writing and dissemination in Years~2 and 3.
-This stage will also produce two papers, one focusing on passive
-approaches (nulling), and one focusing on active approaches (resolving
-and fitting).
+This stage will produce one paper focused on direct comparison of 
+passive approaches (nulling) and active approaches (resolving
+and fitting) to treating the same data. 
 The dissemination part will also include two community workshops on
 \EPRV\ as a time-domain problem, in which we build on our experience
 of working with radial-velocity teams to bring new methods and
@@ -764,10 +810,10 @@ to write up in Year~2 and more holistic mitigation will require
 methods and software that will be built in Years~2 and 3 and published
 and disseminated in Year~3.
 Again, we will use the community workshops in Years~2 and 3 as part of
-the dissemination
+the dissemination.
 
 PI Hogg will be responsible for overall project management. This is a
-tiny project; most of the management will involve decisions about our
+small-scale project; most of the management will involve decisions about our
 priorities given the experiments we perform in Year~1 and the
 challenges we discover there.
 PI Hogg will also be responsible for academic supervision of, and
@@ -775,7 +821,7 @@ career mentoring for, the \GRA.
 The two workshops will be chaired by Co-I Bedell, with PI Hogg and
 the \GRA\ on the organizing committees.
 
-HOGG SAY STUFF ABOUT BEDELL SUPPORT HERE.
+HOGG SAY STUFF ABOUT BEDELL SUPPORT HERE. (and also SF facilities for hack weeks?)
 
 \section{Prior NSF support}
 
