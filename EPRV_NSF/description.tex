@@ -26,9 +26,9 @@
 The detection, confirmation, and detailed characterization of exoplanets
 requires extreme precision radial-velocity (\EPRV)
 measurements.
-With \EPRV\ programs we can measure the 
-masses (and hence compositions) of transiting planets,
-characterize host stars and systems in exquisite detail,
+With \EPRV\ data we can measure the 
+masses (and compositions) of transiting planets,
+characterize host stars in exquisite detail,
 and make measurements of stellar and planetary surfaces.
 Indeed, \EPRV\ was awarded the 2019 Nobel Prize in Physics!
 Most importantly for this proposal, with the next generation of \EPRV\ 
@@ -45,12 +45,7 @@ have had their center-of-mass
 velocities measured consistently with an empirical scatter
 smaller than $\approx 100\,\cmps$ 
 ($1\,\mps$) (although there are rumors of better from \acronym{ESO} \ESPRESSO\ \citep{Pepe2010} and \EXPRES\ \citep{Jurgenson2016}).
-
-At the same time, \EPRV\ is responsible for hundreds of \foreign{ab
-initio} exoplanet discoveries and hundreds more \foreign{a
-posteriori} characterizations of planets discovered elsewhere.
-That is, \EPRV\ is hugely successful.
-Because most of the discoveries and characterizations have been made
+Because most \EPRV\ discoveries and characterizations have been made
 at or near precision limits---that is, near what is detectable at noise levels
 greater than $1\,\mps$ per epoch---\textbf{any improvement in precision directly
 translates into increased scientific return on investment},
@@ -64,8 +59,8 @@ stability of calibration references such as arc lamps, etalon
 (Fabry--Perot) interferometer signals, gas cells, or laser-frequency
 combs.
 
-It is therefore now widely accepted (and convincingly
-established to us) that the majority of the radial-velocity variance
+It is therefore now accepted (and convincingly
+established) that the majority of the radial-velocity variance
 in \EPRV\ campaigns is coming from the stars themselves, or what's
 often called ``astrophysical noise'' (convection, star spots,
 asteroseismic pulsations, plages, faculae, and flares, for example).
@@ -206,46 +201,45 @@ between exposures!
 Or that it doesn't vary \emph{adversarially} between exposures.
 
 \hoggbox{\paragraph{Information Theory:}
-The fundamental limit on \EPRV\ precision is given by the Cramer-Rao Bound, which is
-the Fisher Information in this case.
+The fundamental limit on \EPRV\ precision is given by the Cram\'er--Rao Bound, or
+the Fisher Information.
 The Fisher Information is the best possible inverse-variance that can be obtained
-on any \RV\ measurement, and it appears in the literature in multiple places,
+on any \RV\ measurement, and it appears in the literature,
 although not usually written in this language \citep{Butler1996, Bouchy2003}.
-Symbolically, in the case of a time-invariant spectrum,
-the Fisher Information $\sigma_v^{-2}$ is given by
+Symbolically, in the time-invariant case,
+the Information $\sigma_v^{-2}$ is given by
 \begin{equation}\label{eq:fisher}
 \sigma_v^{-2} =
 \left[\frac{\dd f}{\dd v}\right]^{\mathsf T}\cdot C^{-1}\cdot
 \left[\frac{\dd f}{\dd v}\right] \quad ,
 \end{equation}
-where $\sigma_v$ is the \RV\ uncertainty, the derivatives are the derivative
+where $\sigma_v$ is the \RV\ uncertainty, the derivatives are
 of the spectral expectation $f$ (seen as a column vector) with respect to \RV\ $v$,
 and the inverse variance of the noise in the spectrum is $C^{-1}$ (diagonal in the
-simple case that all spectral pixels are independently measured; more complex in
-what follows!).
+simple case that all spectral pixels are independently measured).
 
 Things get a bit more complicated when there are nuisance parameters, but
 not fundamentally different: The derivatives
-become rectangular projection operators and the Information becomes a tensor (matrix)
-must be inverted to deliver nuisance-marginalized uncertainties.
+become rectangular projection operators and the Information becomes a matrix
+that must be inverted to deliver nuisance-marginalized uncertainties.
 
 When we turn on stellar variability, there will be two ways to modify the Fisher
 Information.
-In one framework, the stellar variability is seen as an additional source of noise
+In one framework, the stellar variability is seen as an additional noise
 in the space of wavelength and time.
 The Information gets modified by having $f$ become not just one spectrum but a
-full time series of spectra, and by having $C$ become not just the variance tensor
-of the instrumental noise, but also of the ``noise'' associated with the spectral
+full time series of spectra, and by having $C$ become not just the diagonal tensor
+of the instrumental noise, but also of the non-diagonal ``noise'' associated with the spectral
 variability (which will be covariant in both wavelength and time).
 The additional noise will increase the eigenvalues of $C$, decrease the eigenvalues
-of $C^{-1}$, and decrease the precision (increase $\sigma_v$).
+of $C^{-1}$, and decrease precision (increase $\sigma_v$).
 
-In another framework, the stellar variability is seen as an additional set of
+In another framework, stellar variability is seen as an additional set of
 nuisance parameters (for example, the amplitudes of eigenspectral contributions
-to the spectrum at each observation).
-In this framework, the stellar variability is seen as a set of nuisance parameters
-that add dimensions to the Information tensor.
-This will also serve to reduce the precision (increase $\sigma_v$).
+at each observation).
+In this framework, the stellar variability
+adds dimensions to the Information tensor.
+This will also serve to decrease precision (increase $\sigma_v$).
 }
 
 Once the spectrum is permitted to vary between exposures (and we know that
@@ -443,8 +437,7 @@ achieving the \RV\ precisions they ought to expect.
 \textbf{That is, we will deliver methods for estimating variability, and methods
 for estimating the quantitative impact of those variabilities on \RV\ precision.}
 
-One extremely important point, which we want to make in the papers we write
-in the First Stage, is the following:
+One important point to make in the papers we write is the following:
 In the case that the stellar spectrum does not vary, the
 cross-correlation function (\CCF) between the observed spectrum and a
 (very good) spectral template (model spectrum) is a \emph{sufficient
@@ -590,7 +583,7 @@ terms of information theory.
 
 Together, the First and Second Stages set the scene for tackling more
 pernicious sources of correlated noise in \EPRV.
-These more pernicious sources are the subject of the Third Stage.
+These comprise the Third Stage.
 
 \section{Third Stage: Mitigation of myriad variabilities (stochastics)}
 
@@ -639,9 +632,6 @@ Indeed it is very natural because in the current \wobble\ setup, the
 star and tellurics are both modeled in a completely data-driven way. 
 Also, notions of time coherence as explored in the First Stage will be 
 relevant to this problem.
-
-% I'm taking out flares because I don't think they're a big deal for the
-% stars we're tackling!
 \item
 \textbf{surface convection:}
 Hot material wells up and cold material sinks on the surface of the star.
@@ -658,13 +648,13 @@ valuable covariance structure in the time domain.
 If our hopes are justified, it will be possible to fit a stochastic
 process (like a Gaussian Process) to the time domain, in a low-rank
 representation of the spectral domain.
-That's speculative, but it is worth finding out if it is true.
+That's speculative, but it is worth a look.
 \end{itemize}
 
 \noindent
-We will not consider all of the possible sources of stochastic variability;
-the project staffing and timeline are not large enough.
-We will instead prioritize around the intersection of team interests (and
+We will not consider all possible sources of stochastic variability;
+the project staffing and timeline are not enough!
+We will prioritize around the intersection of team interests (and
 especially GRA interests), opportunity relative to other community efforts
 (to use our resources for highest impact), and opportunity in terms of
 impact on \EPRV\ projects (amplitudes of signals, flowed down to final measurements).
@@ -960,29 +950,29 @@ by \NSF grants at a range of different institutions.
 There are a few extremely precise spectrographs operating now, 
 and many more on the horizon \citep{Wright2017}.
 \EPRV\ is entering a golden era, brought on in part by missions like
-\TESS, which require solid follow-up, and in part by a hope that
+\TESS, which require follow-up, and in part by a hope that
 \EPRV\ can detect the true Earth analogs (long-period, low-mass, rocky
 planets around G-type stars).
 If we don't solve these stellar spectral-variability issues, these
 projects will not live up to their greatest promise.
-And the three-year time scale of this grant is well matched to the
-commissioning of many new instruments.
+And the time-scale of this grant is matched to the
+commissioning of new instruments.
 
 \paragraph{Isn't this proposal a giant fishing expedition?}
-Kind of! It's true that we (and the community in general) are not yet certain 
-which aspects of stellar variability are most critical to address, and which 
-methods are best suited to mitigating them. We are not promising to 
+Kind of! It's true that we (and the community in general) are not certain 
+which aspects of variability are most critical, and which 
+methods are best suited. We are not promising to 
 ``solve'' stellar activity or stellar spectral variability in this proposal.
 Much of our work will be 
 experimental. But this proposal is more than a series of experiments. 
-We firmly believe that overcoming the hurdle of stellar variability and 
+We believe that overcoming stellar variability and 
 discovering Earth analogs will require data and effort from multiple, 
-diverse \EPRV\ instruments and groups. To this end, we will establish 
-a common language and statistically-motivated theoretical framework 
-to guide the broader community. Through the papers produced in this 
+diverse \EPRV\ instruments, techniques, and groups. To this end, we will establish 
+a common language and theoretical framework 
+to guide the community. Through the papers produced in this 
 program and through ``hack-week''-style events hosted by us, we aim to 
 lay the groundwork that \textit{will} solve the problem of stellar variability 
-in \EPRV, regardless of the success rate of the individual, granular experiments we do. 
+in \EPRV, regardless of the success of each individual experiment we do. 
 
 \paragraph{Isn't this work already being done?}
 It certainly is true that the community is working hard on time
@@ -994,12 +984,11 @@ It is our view that this is such a tall pole for \EPRV\ that we need
 to launch and support multiple groups working from multiple angles.
 We will be different from the community in a number of ways, but one
 is that we are considering fully data-driven approaches, and in the
-full outer-product space of time and wavelength.
+full outer-product-space of time and wavelength.
 We also have a conceptual bent: We will try to change the conversation
 about \EPRV\ and then build mitigation strategies that talk to the
 new frameworks and languages.
-We have unique things to provide.
-This does not represent a duplication of effort.
+This does not represent any duplication of effort.
 
 \paragraph{You can't ever really get rid of stochastic stellar noise, right?}
 If something is called ``noise'' we tend to think ``oh well, it's
@@ -1008,10 +997,7 @@ space or both---then it can be modeled continuously.
 This proposal argues that all the important noise sources in \EPRV\ coming
 from spectral variability will be structured in both time and wavelength.
 Therefore there are handles for modeling and mitigation.
-We are optimistic that these approaches will work.
-If they don't, at least we will know that we have tried very very hard, 
-and our failures will provide informative contributions to the 
-literature going forward.
+We are optimistic that these approaches will work, at least substantially.
 
 \paragraph{What is the metric for project success?}
 Given that we're \textit{not} claiming that we'll 
