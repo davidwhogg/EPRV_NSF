@@ -168,7 +168,7 @@ includes two themes of relevance, which are \textbf{Growing
 
 HOGG: Is \textbf{Understanding the Rules of Life} also relevant?
 
-\paragraph{This proposal, in a nutshell:}
+\hoggbox{\paragraph{This proposal, in a nutshell:}
 Stellar variability is the tall pole in \EPRV\ at the present day.
 We propose to build customized, data-driven models to capture and mitigate these
 stellar astrophysical noise sources, taking advantage of modern advances in
@@ -179,6 +179,7 @@ that can be done with the current and next generation of spectrographs.
 Along the way, our contributions to the literature will 
 establish a common statistical framework to enable communication 
 and methodological comparisons across the global \EPRV\ community. 
+}
 
 \section{First Stage: Bounds on \EPRV\ in time-varying stars (information)}
 
@@ -731,8 +732,6 @@ spots, and which have velocities relative to the mean stellar surface
 velocity in the range permitted by the stellar rotation ($v\sin i$).
 It might additionally involve requiring observations that are close
 in time to have spot components with similar velocities.
-After all, we expect star spots to be patches of star with a different
-spectrum, moving continuously relative to the stellar mean velocity.
 Such additional components could then be optimized along with the other
 components of \wobble.
 That's just an example, but shows the kinds of approaches we imagine taking.
@@ -764,24 +763,22 @@ community workshops we run in Years 2 and 3 (more detail below).
 
 \section{Community workshops}
 
-BEDELL: PLEASE AUDIT THIS CAREFULLY
-
 Building on the PI's and co-I's success with workshops like
 \project{AstroHackWeek}s, the \project{Gaia Sprint}s,
-\project{Telluric Line Hack Week} and \project{Preparing for \TESS}
+\project{Telluric Line Hack Week} and \project{\TESS Hack Week}s
 (see biographical sketches), \textbf{part of this proposal is to organize and
 run two community workshops aimed at increasing community uptake of our
-tools, and broadening training in the \EPRV\ community.}
+tools, and broadening statistical training in the \EPRV\ community.}
 These workshops will run at the Flatiron Institute, where both the
 PI and co-I have facilities to run these workshops free of charge
 (see the Facilities and Resources part of this proposal).
 Each workshop will be 4.5 days of a week, and be a mixture of
 pedagogical content, research presentations, and extensive time for
 hands-on work (hacking) on participant research projects.
-As we with \project{Telluric Line Hack Week} in 2019 February, we
+As with our \project{Telluric Line Hack Week} in 2019 February, we
 will aim for 30-ish participants at each workshop, and we will theme
 the workshops to attract advanced undergraduate students, graduate
-students, postdocs, and early-career scientists whoare actually
+students, postdocs, and early-career scientists who are actually
 implementing the code and pipelines for their projects.
 
 The schedule will involve some pedagogical and contributed presentations,
@@ -793,15 +790,13 @@ style for years now with good outcomes.
 We even have a paper about one of the hack-week series (\citealt{AHW}).
 
 Given that this is an \NSF\ proposal and we respect strongly the larger
-goals of the \NSF, we will work especially to involve
-under-represented minority scientists, early-career scientists, and women.
+goals of the \NSF, \textbf{we will work especially to involve
+under-represented minority scientists, early-career scientists, women, 
+and researchers from diverse backgrounds}.
 We have had good success with this with the \project{AstroHackWeek} projects,
 but we did find that doing well with URMs requires active work on the part
 of meeting organizers, both in getting applications, and balancing the pool
 of acceptances.
-The Flatiron Institute is also very interested in improving its practices
-around URMs and women, so one of the \emph{broader impacts} of this will
-not just be with our community, but also with the Institute itself.
 
 These workshops are critical to our success.
 We know from our software projects---like \project{Astrometry.net},
@@ -815,14 +810,10 @@ get the software working during the week itself.
 This motivates a workshop that is not passively listening to talks, but actively
 doing things relevant to participants' projects.
 
-The content and style of the workshops is important in part because we are trying to bring ideas to the
-community that will be ``outside the box'' for many of our customers (who
-are used to operating legacy software).
-It is also important because we want to deliver our tools and methods
+The content and style of the workshops is important because we want to deliver our tools and methods
 to the widest possible range of scientists, from the widest possible set of
-backgrounds; we want to meet people where they are.
-And of course it is important because our target audience is early-career.
-These are people who need to get their stuff done!
+backgrounds; we want to meet people where they are, and we want
+to have a positive, inclusive impact on the broader culture of our field(s).
 
 \section{Timeline and project management}
 
@@ -980,7 +971,7 @@ and
 \project{Theoretical Particle Physics, Astrophysics and Cosmology} (2001--2004).
 and (in ancient history) a \NSF\ graduate fellowship.
 The majority of the PI's 220 refereed publications have been at least partially supported
-by \NSF grants at a range of different institutions..
+by \NSF grants at a range of different institutions.
 
 \section{Frequently asked questions}
 
@@ -1016,31 +1007,8 @@ program and through ``hack-week''-style events hosted by us, we aim to
 lay the groundwork that \textit{will} solve the problem of stellar variability 
 in \EPRV, regardless of the success rate of the individual, granular experiments we do. 
 
-\paragraph{How can these two influence the whole community?}
-We might look like outsiders (and especially the PI).
-But we are not: We have one of the very few open-source \EPRV\ codes
-(\wobble; \citealt{Bedell2019}), and there are many new projects incorporating 
-\wobble\ into their pipelines.
-We are working on calibration and data analysis with the \EXPRES\ team (Debra Fischer
-at Yale is the PI; see the letter of support).
-Also, we are partners in the forthcoming \HARPS-3 project
-\project{Terra Hunting Experiment}, which has a direct engineering
-requirement to obtain better than $20\,\cmps$ precision
-\RV\ measurements for quiet G-type stars.
-\project{Terra Hunting} needs our help on stellar variability, and will adopt
-the mitigation strategies we discover and build.
-We have also operated many very successful workshops and hack weeks
-bringing new methods and new data to the astrophysics community.
-These include the \project{Gaia Sprints}, \project{Preparing for
-  \TESS}, and the \project{Telluric-line Hack Week}.
-These events have brought together diverse communities and spread
-the gospel of good methods.
-But above all, the whole \EPRV\ community is very thirsty for new
-successes in mitigating noise. If we succeed in the Second and Third
-Stages of this project, we will have no trouble developing community
-interest.
 
-\paragraph{Isn't this already being done?}
+\paragraph{Isn't this work already being done?}
 It certainly is true that the community is working hard on time
 variability in some \EPRV\ contexts.
 However, most of the work (with very notable exceptions) has centered
@@ -1057,14 +1025,6 @@ new frameworks and languages.
 We have unique things to provide.
 This does not represent a duplication of effort.
 
-\paragraph{Isn't it all just about getting better instrument stability and calibration?}
-No! New spectrographs are consistently getting few-$\cmps$ consistency
-in internal calibration.
-The problems are external---in the star and in the atmosphere.
-Of course the telluric absorption and micro-tellurics are also
-probably important, and we are working on those issues too (\citealt{Bedell2019}).
-But there is no approach to $10\,\cmps$-level \EPRV\ without a direct
-attack on stellar spectral variability.
 
 \paragraph{You can't ever really get rid of stochastic stellar noise, right?}
 If something is called ``noise'' we tend to think ``oh well, it's
@@ -1074,7 +1034,9 @@ This proposal argues that all the important noise sources in \EPRV\ coming
 from spectral variability will be structured in both time and wavelength.
 Therefore there are handles for modeling and mitigation.
 We are optimistic that these approaches will work.
-If they don't, at least we will know that we have tried very very hard.
+If they don't, at least we will know that we have tried very very hard, 
+and our failures will provide informative contributions to the 
+literature going forward.
 
 \paragraph{How does this connect to the CDS\&E program priorities?}
 HOGG, BEDELL: TBD
