@@ -487,11 +487,12 @@ p-modes can be nearly completely mitigated through spectral and temporal modelin
 because they have two important properties:
 The first is that
 \textbf{p-modes are temporally coherent} on reasonable time scales (days to months, depending on
-stellar type). Therefore, they can be fit as sinusoids over time intervals 
-short relative to the coherence time. Furthermore, the frequencies are known,
-or can be known, through monitoring (with the \EPRV\ spectrograph itself 
-\citep[][and references therein]{Bouchy2003},
-or photometrically with a \TESS-like mission).
+stellar type). Therefore, they can be fit with a stationary model over time intervals 
+short relative to the coherence time. 
+%Furthermore, the frequencies are known,
+%or can be known, through monitoring (with the \EPRV\ spectrograph itself 
+%\citep[][and references therein]{Bouchy2003},
+%or photometrically with a \TESS-like mission).
 The second important property is that
 \textbf{p-modes have associated temperature signatures}. Indeed, the star gets
 hotter when it contracts and cooler when it expands, adiabatically. Although for
@@ -522,36 +523,42 @@ in-hand. The mitigation strategies we will explore are:
 \textbf{Choosing resonant integration times:}
 There is hope in the \EPRV\ community that cleverly chosen integration
 times can obviate p-mode noise \citep[see, \eg][]{Chaplin2019}.
-Current work in this area makes somewhat na\"ive assumptions about the
-stability of the p-mode amplitudes. 
-Using our realistic toy model of stochastic p-mode oscillations, we will
-test different integration times. 
-We will also experiment with binning the \EXPRES\ data to simulate 
-different integrations. 
-We expect to find that although some exposure times are better than
-others, we need to actively mitigate, not passively avoid, p-mode
-noise.
+%Current work in this area makes somewhat na\"ive assumptions about the
+%stability of the p-mode amplitudes. 
+We will test the performance of this approach using
+both our realistic toy model of stochastic p-mode oscillations
+and binned versions of the real \EXPRES\ data. 
+These results will serve as a benchmark of the best-case outcome 
+using a passive avoidance strategy.
+%We expect to find that although some exposure times are better than
+%others, we need to actively mitigate, not passively avoid, p-mode
+%noise.
 \item
 \textbf{Resolving modes and fitting them coherently:}
 The alternative strategy to p-mode avoidance is to take short exposures,
 short enough that they Nyquist-sample the highest-frequency p-modes of
 the star.
-Any (say, 30-minute) visit to the star could be split into short (say,
-2-minute) exposures.
-This incurs some observing and read-noise overheads, but permits
+%Any (say, 30-minute) visit to the star could be split into short (say,
+%2-minute) exposures.
+Splitting a long exposure into many short exposures 
+incurs some observing and read-noise overheads, but permits
 resolution of the p-modes directly.
 Then the obtained \RV\ measurements can be fit with a sum of coherent
-sinusoids, regularized with the (presumed known) power spectrum of the
-star.
-That is, the amplitudes permitted for the coherent sinusoids would be
-forced by regularization (or priors) to be consistent with the
-expected p-mode spectrum.
-Then the stellar \RV\ measurement relevant to exoplanet detection and
-characterization could be corrected for the state of the p-mode
-sinusoids during the exposure set.
+sinusoids, regularized with the power spectrum of the
+star. 
+Said power spectrum might be known (from \TESS or comparable photometry) or,
+in some cases, it might be learned from the \RV\ data itself. 
+Either way, this method promises to correct the data within an exposure set 
+self-consistently with uncertainties correctly propagated to the \RV.
+%That is, the amplitudes permitted for the coherent sinusoids would be
+%forced by regularization (or priors) to be consistent with the
+%expected p-mode spectrum.
+%In this case, the stellar \RV\ measurement relevant to exoplanet detection and
+%characterization could be corrected for the state of the p-mode
+%sinusoids during the exposure set.
 \item
 \textbf{Fitting the observations incoherently:}
-The power spectrum of p-modes can be Fourier Transformed into a kernel
+The power spectrum of p-modes can be Fourier transformed into a kernel
 for a Gaussian Process.
 This Process captures the time-correlations of the p-mode
 radial-velocity variations across exposures taken at different times.
@@ -580,7 +587,9 @@ That is, we might need to build a matched filter in the joint
 two-dimensional domain of wavelength and time.
 If we can detect the temperature variations, they will provide great
 prior information about \RV\ variations and create another mitigation
-strategy.
+strategy. 
+This strategy will also be relevant to tackling phenomena like starspots in
+the next phase of our proposal.
 \end{itemize}
 
 \noindent
