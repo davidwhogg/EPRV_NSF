@@ -645,12 +645,14 @@ spectrum and wavelength as a cooler stellar patch slightly more
 localized in velocity than the whole stellar surface.
 Our approach on star spots, building on prior work (\citealt{Gully}) will
 be to consider lower-temperature spectral components with small
-velocity shifts try to fit everything simultaneously.
+velocity shifts and try to fit everything simultaneously.
 If the spots are reliably lower in temperature, it should be possible
 to detect and mitigate them using physical photosphere models, at
 least to first order.
 This modeling is possible to implement as an extremely straightforward
-extension of the \wobble\ framework.
+extension of the \wobble\ framework. 
+It also builds directly on the temperature-dependent experiments we will do
+for stellar oscillations as part of the Second Stage.
 \item
 \textbf{plages, faculae, and other surface features:}
 These features are similar to star spots and will imprint in similar
@@ -666,31 +668,18 @@ them as we propose for star spots, but permitting their spectral
 properties to be determined by the data directly.
 This is also possible as an extension of the \wobble\ framework.
 Indeed it is very natural because in the current \wobble\ setup, the
-star and tellurics are both modeled in a completely data-driven way.
-In addition to all this, both spots and surface features should show
-time coherence, as they rotate in and out of view on the stellar
-surface.
-As noted in the description of the First Stage (information), this
-time coherence could be critical for identifying these effects and
-separating them from the \RV\ signals from exoplanets.
-\item
-\textbf{flares and magnetic activity:}
-The concept of ``stellar activity'' is often combining effects of
-magnetic flares and star spots.
-From our perspective, star spots appear in the data as rotating
-surface patches, whereas flares appear as emission lines and possibly
-also effective temperature changes in particular lines, again possibly
-also with velocity shifts relative because of rotation or
-chromospheric velocities.
-Because we don't know exactly what to expect here, we might start by
-regressing spectra or spectral residuals (away from \wobble\ fits)
-against activity indicators to find full-spectrum indicators of
-magnetic activity (work along these lines is also happening in the
-Cisewski group at Yale; we know this from private communications).
-If we can build a low-dimensional data-driven model (from, say, these
-regressions or a latent-variable extension), we could hope to correct
-the spectra for flaring, and measure the \RV\ off the corrected
-spectrum.
+star and tellurics are both modeled in a completely data-driven way. 
+Also, notions of time coherence as explored in the First Stage will be 
+relevant to this problem.
+%In addition to all this, both spots and surface features should show
+%time coherence, as they rotate in and out of view on the stellar
+%surface.
+%As noted in the description of the First Stage (information), this
+%time coherence could be critical for identifying these effects and
+%separating them from the \RV\ signals from exoplanets.
+
+% I'm taking out flares because I don't think they're a big deal for the
+% stars we're tackling!
 \item
 \textbf{surface convection:}
 Hot material wells up and cold material sinks on the surface of the star.
@@ -721,9 +710,9 @@ Since we don't yet understand these variabilities in detail, part of this
 proposal is to do the work to make those priority decisions.
 
 We emphasize here that we are \textit{not} proposing to ``solve
-all stellar variability.'' What we are proposing to do is develop a set of 
+all stellar variability.'' \textbf{What we are proposing to do is develop a set of 
 principled, largely data-driven methods and statistical ideas, which may be 
-broadly adapted to different \EPRV\ challenges. This Third Stage is the 
+broadly adapted to different \EPRV\ challenges.} This Third Stage is the 
 point at which we use the knowledge gained in the First Stage (where we 
 laid out an information-theory-based framework) and in the Second Stage 
 (where we tackled a relatively well-understood and tractable example 
@@ -741,8 +730,7 @@ components that have the flexibility to look like cooler star surface
 spots, and which have velocities relative to the mean stellar surface
 velocity in the range permitted by the stellar rotation ($v\sin i$).
 It might additionally involve requiring observations that are close
-in time, to have these additional spot components have velocities that
-are close in velocity space.
+in time to have spot components with similar velocities.
 After all, we expect star spots to be patches of star with a different
 spectrum, moving continuously relative to the stellar mean velocity.
 Such additional components could then be optimized along with the other
