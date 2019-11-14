@@ -331,11 +331,6 @@ variability subspace.
 This projection will cost some information, but it will return a time-invariant
 spectrum and return us to the utopia of the time-invariant Fisher Information
 calculation, just with a new noise model.
-%This approach is appropriate in a well-defined limit of variability (related
-%to dimensionality) and is
-%promising so long as the variability subspace does not contain (or does not come very
-%close to containing) the derivative of the spectral expectation with respect
-%to \RV\ (the derivative in the Fisher Information in the box \vpageref{eq:fisher}).
 
 In this approach, the idea would be to estimate the (hopefully
 low-rank) subspace (eigenspace) in which the stellar spectrum varies.
@@ -347,11 +342,6 @@ which the eigenspectra co-add to fit the individual spectrum taken at
 that epoch.
 These amplitudes become nuisance parameters which complexify the
 Information computation, as described in the box \vpageref{eq:fisher}.
-%In general the existence of this subspace will reduce the expected
-%\RV\ precision.
-%However, the amount that it reduces it will depend most strongly on
-%the projection of the \RV\ derivative of the mean spectrum onto the
-%subspace.
 This method is called ``filtering'' because this information-theoretic
 operation is equivalent to projecting the data onto a subspace that is
 tangent to the spectral-variability subspace.
@@ -360,8 +350,6 @@ The effectiveness of this method will depend on how closely the variability
 subspace is aligned with the derivative of the spectrum with respect to the \RV. 
 \item
 \textbf{Time-domain process priors:}
-%Variabilities can be incoherent (most are) or coherent (as p-modes are
-%over short time scales).
 In the limit of long data sets (years), no source of stellar spectral
 variability will look identical to a ``Kepler process'', or the time
 dependence of \RV\ induced by mixtures of two-body orbits.
@@ -380,14 +368,6 @@ by an N-body Keplerian system), and a stochastic prior (like a Gaussian
 Process) on the stellar-variability-induced signals, treating the
 \RV\ measurements as being created by the sum of these two
 processes.
-%Or even treat the spectral variability (in wavelength space) as being caused by these two
-%processes (if we want to treat the \RV\ shift as a variability).
-%This approach would require estimation of the statistical properties
-%(time coherence or covariance as a function of time lag) for the
-%\RV\ signals induced by the stellar spectral variability.
-%These can be estimated with statistics that look like auto-correlation
-%functions.
-
 The information-theoretic question would then be asked in the space
 of the Kepler parameters instead of the \RV\ measurements themselves.
 And the Gaussian Process would become part of the nuisance space of
@@ -407,7 +387,6 @@ In non-worst-case it is still useful, however, because this approach
 can be combined with the other approaches in this First Stage (information) to deliver
 information-theoretic limits on Kepler parameters in the face of
 different kinds of spectral variability.
-%We also propose to look at that question.
 \item
 \textbf{Causal modeling:}
 Finally, for long-term stellar monitoring campaigns, there is an idea
@@ -490,10 +469,6 @@ The first is that
 \textbf{p-modes are temporally coherent} on reasonable time scales (days to months, depending on
 stellar type). Therefore, they can be fit with a stationary model over time intervals 
 short relative to the coherence time. 
-%Furthermore, the frequencies are known,
-%or can be known, through monitoring (with the \EPRV\ spectrograph itself 
-%\citep[][and references therein]{Bouchy2003},
-%or photometrically with a \TESS-like mission).
 The second important property is that
 \textbf{p-modes have associated temperature signatures}. Indeed, the star gets
 hotter when it contracts and cooler when it expands, adiabatically. Although for
@@ -524,23 +499,16 @@ in-hand. The mitigation strategies we will explore are:
 \textbf{Choosing resonant integration times:}
 There is hope in the \EPRV\ community that cleverly chosen integration
 times can obviate p-mode noise \citep[see, \eg][]{Chaplin2019}.
-%Current work in this area makes somewhat na\"ive assumptions about the
-%stability of the p-mode amplitudes. 
 We will test the performance of this approach using
 both our realistic toy model of stochastic p-mode oscillations
 and binned versions of the real \EXPRES\ data. 
 These results will serve as a benchmark of the best-case outcome 
 using a passive avoidance strategy.
-%We expect to find that although some exposure times are better than
-%others, we need to actively mitigate, not passively avoid, p-mode
-%noise.
 \item
 \textbf{Resolving modes and fitting them coherently:}
 The alternative strategy to p-mode avoidance is to take short exposures,
 short enough that they Nyquist-sample the highest-frequency p-modes of
 the star.
-%Any (say, 30-minute) visit to the star could be split into short (say,
-%2-minute) exposures.
 Splitting a long exposure into many short exposures 
 incurs some observing and read-noise overheads, but permits
 resolution of the p-modes directly.
@@ -551,12 +519,6 @@ Said power spectrum might be known (from \TESS or comparable photometry) or,
 in some cases, it might be learned from the \RV\ data itself. 
 Either way, this method promises to correct the data within an exposure set 
 self-consistently with uncertainties correctly propagated to the \RV.
-%That is, the amplitudes permitted for the coherent sinusoids would be
-%forced by regularization (or priors) to be consistent with the
-%expected p-mode spectrum.
-%In this case, the stellar \RV\ measurement relevant to exoplanet detection and
-%characterization could be corrected for the state of the p-mode
-%sinusoids during the exposure set.
 \item
 \textbf{Fitting the observations incoherently:}
 The power spectrum of p-modes can be Fourier transformed into a kernel
@@ -596,8 +558,6 @@ the next phase of our proposal.
 \noindent
 Because we have access to proprietary \EXPRES\ data on $\tau$ Ceti 
 (from Debra Fischer at Yale; see letter of support),
-% public \HARPS\ asteroseismic campaigns for 
-%several seismic stars including $\beta$ Hyi, $\alpha$ Cen B, and 18 Sco,
 we can perform these experiments on existing, real data.
 We don't have to make assumptions about how p-modes work.
 And over the course of this project, more public data sets may appear
@@ -672,12 +632,6 @@ Indeed it is very natural because in the current \wobble\ setup, the
 star and tellurics are both modeled in a completely data-driven way. 
 Also, notions of time coherence as explored in the First Stage will be 
 relevant to this problem.
-%In addition to all this, both spots and surface features should show
-%time coherence, as they rotate in and out of view on the stellar
-%surface.
-%As noted in the description of the First Stage (information), this
-%time coherence could be critical for identifying these effects and
-%separating them from the \RV\ signals from exoplanets.
 
 % I'm taking out flares because I don't think they're a big deal for the
 % stars we're tackling!
@@ -876,7 +830,6 @@ The two workshops will be chaired by Co-I Bedell, with PI Hogg and
 the \GRA\ on the organizing committees.
 
 
-
 HOGG SAY STUFF ABOUT BEDELL SUPPORT HERE. (and also SF facilities for workshops and hack weeks!)
 
 \section{Intellectual merit}
@@ -890,7 +843,7 @@ Understanding our place (Earth, humans) in all this is critical for physics, for
 public, who are curious about this above almost all other things.
 And the astronomical community is rallying around this goal: many new \EPRV\ instruments 
 are coming online, and NSF and NASA are jointly exploring future possibilities via the 
-\project{\EPRV Working Group} (in which Co-I Bedell is involved).
+\project{\EPRV Working Group} (in which Co-I Bedell is a participant).
 
 These significant investments in \EPRV\ \textit{will not meet their goals} if
 stellar noise remains a limiting factor at the $1,\mps$ level. 
@@ -908,17 +861,21 @@ We will be sensitive to asteroseismic mode amplitude and phase variations, which
 are in principle measurements of the properties of stellar interiors.
 An \EPRV\ measurement has a star at one end and a spectroscopic instrument at the other.
 The \EPRV\ community has become remarkable at calibrating their \emph{instruments}.
-Here we are taking a serious shot at calibrating their \emph{stars}.
+Here we are taking a serious shot at calibrating their \emph{stars}. 
+The resulting science will be relevant to both the exoplanet and the stellar astrophysics 
+communities.
 
 \section{Broader impacts}
 
 HOGG The broader impacts of this work fall into various categories...
 
-HOGG, BEDELL: TBD; LOOK AT WHAT'S IN THE SUMMARY AND SEE IF THAT MAKES SENSE.
+HOGG: TBD; LOOK AT WHAT'S IN THE SUMMARY AND SEE IF THAT MAKES SENSE. (I like the summary! - MB)
 
 \section{Prior NSF support}
 
 Here we list \NSF\ grants that have supported the PI within the last five years.
+
+HOGG: Can we cut some of the details here? idk what is most important.
 
 \paragraph{\acronym{OAC-1841594}
 \project{Collaborative Research: Community Planning for Scalable Cyberinfrastructure to Support Multi-Messenger Astrophysics} (2018-2020)}
